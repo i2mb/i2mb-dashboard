@@ -509,8 +509,8 @@ def paired_violin_plot(data, y_label, x_label=None, x_field=None, y_field=None, 
         fig = ax.get_figure()
 
     orient = kwargs_default.get("orient", "v")
-    xscale = kwargs_default.get("xscale", None)
-    yscale = kwargs_default.get("yscale", None)
+    xscale = kwargs_default.pop("xscale", None)
+    yscale = kwargs_default.pop("yscale", None)
     if orient == "h":
         y_field, x_field = x_field, y_field
         y_label, x_label = tuple([x_label, y_label])
